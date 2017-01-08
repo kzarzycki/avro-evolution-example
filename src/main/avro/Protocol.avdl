@@ -1,0 +1,17 @@
+@namespace("com.getindata.examples")
+protocol Proto {
+  record V1 {
+    string f1;
+  }
+
+  record V2 {
+    string f1;
+    union { null, string } f2 = null;
+    union { string, null } f3 = "hello";
+  }
+
+
+  record IncombatibleV3 {
+    string f3;
+  }
+}
