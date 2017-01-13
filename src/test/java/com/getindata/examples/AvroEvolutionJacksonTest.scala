@@ -24,7 +24,7 @@ class AvroEvolutionJacksonTest extends FunSuite with Matchers {
     val schemaV2 = new AvroSchema(V2.SCHEMA$)
 
     // reader of upgrade case class, but with old schema : OK!
-    val readerV2 = mapper.reader(schemaV2).`with`(schemaV1)
+    val readerV2 = mapper.readerFor(classOf[V2]).`with`(schemaV1)
 
     val v2 : V2 = readerV2.readValue(bytes)
 
